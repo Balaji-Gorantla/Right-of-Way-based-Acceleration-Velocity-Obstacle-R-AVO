@@ -1,0 +1,14 @@
+function [ang, ang2] = angle_finder(v,v_des)
+
+v(end+1) = 0; 
+v_des(end+1) = 0;
+cro = cross(v,v_des);
+
+ang = asin(cross(v,v_des)/(norm(v_des)*norm(v)));
+ang2 = acos(dot(v,v_des)/(norm(v_des)*norm(v)));
+ang3 = atan2(v_des) - atan2(v);
+1;
+if sign(cro(3)) == 1
+    1;
+    ang = -1*ang;
+end
